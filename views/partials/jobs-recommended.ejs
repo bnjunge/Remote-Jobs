@@ -1,0 +1,48 @@
+<!-- Jobs Start -->
+<div class="container-xxl py-3 bg-light">
+    <div class="container">
+      <div class="tab-class wow fadeInUp" data-wow-delay="0.3s">
+        <ul
+          class="nav nav-pills d-inline-flex border-bottom mb-4"
+        >
+          <li class="nav-item">
+            <a
+              class="d-flex text-start mx-3 ms-0 pb-3 active"
+            >
+              <h6 class="mt-n1 mb-0">Recommended</h6>
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="tab-1" class="tab-pane fade show p-0 active">
+
+            <% jobs.forEach(job => { %>
+              <div class="job-item p-4 mb-4 bg-white">
+                <div class="row g-4">
+                  <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                    <img
+                      class="flex-shrink-0 img-fluid border rounded"
+                      src="<%= job.company_logo %>"
+                      alt="<%= job.company %> - <%= job.position %>"
+                      style="width: 80px; height: 80px"
+                    />
+                    <div class="text-start ps-4">
+                      <a href="/jobs/<%= job.id %>"><h5 class="mb-3"><%= job.position %></h5></a>
+                      <span class="text-truncate me-0"
+                        ><i class="far fa-money-bill-alt text-primary me-2"></i>$<%= job.salary_min %>+ %>
+                        </span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+           
+            <a href="/jobs" class="btn btn-primary py-3 px-5">Browse More Jobs</a>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jobs End -->

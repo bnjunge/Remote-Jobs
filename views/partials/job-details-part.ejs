@@ -1,0 +1,92 @@
+
+  <!-- Header End -->
+  <div class="container-xxl py-5 bg-dark page-header">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown"><%= job.position %></h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item text-white active" aria-current="page">Job Details</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Job Detail Start -->
+<div class="container-xxl py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="row gy-5 gx-4">
+      <div class="col-lg-8">
+        <div class="d-flex align-items-center mb-5">
+          <img
+            class="flex-shrink-0 img-fluid border rounded"
+            src="<%= job.company_logo %>"
+            alt=""
+            style="width: 80px; height: 80px"
+          />
+          <div class="text-start ps-4">
+            <h3 class="mb-3"><%= job.position %></h3>
+            <span class="text-truncate me-3"
+              ><i class="fa fa-map-marker-alt text-primary me-2"></i> <%= job.location.length > 0 ? job.location : "Remote" %></span
+            >
+            <span class="text-truncate me-3"
+              ><i class="far fa-clock text-primary me-2"></i>Actively Hiring</span
+            >
+            <span class="text-truncate me-0"
+              ><i class="far fa-money-bill-alt text-primary me-2"></i>$<%= job.salary_min %> - $<%= job.salary_max %></span
+            >
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <h4 class="mb-3">Job description</h4>
+          <%- job.description %>
+        </div>
+
+        <div>
+          <h4 class="mb-3">Job Tags</h4>
+          <p><%- job.tags.join(", ") %></p>
+        </div>
+
+        <!-- </div> -->
+        <div class="">
+          <h4 class="mb-4">Apply For The Job</h4>
+          <div class="col-12">
+            <a target="_blank" href="<%= job.apply_url %>" class="btn btn-primary w-100" type="submit">
+              Apply Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div
+          class="bg-light rounded p-5 mb-4 wow slideInUp"
+          data-wow-delay="0.1s"
+        >
+          <h4 class="mb-4">Job Summery</h4>
+          <p>
+            <i class="fa fa-angle-right text-primary me-2"></i>Published On: <%=
+            new Date(job.date).toLocaleString() %>
+          </p>
+          <p>
+            <i class="fa fa-angle-right text-primary me-2"></i>Job Nature: Full
+            Time
+          </p>
+          <p>
+            <i class="fa fa-angle-right text-primary me-2"></i>Salary: $<%=
+            job.salary_min %> - $<%= job.salary_max %>
+          </p>
+          <p>
+            <i class="fa fa-angle-right text-primary me-2"></i>Location: <%= job.location.length > 0 ? job.location : "Remote" %>
+          </p>
+          <a target="_blank" href="<%= job.apply_url %>" class="btn btn-primary w-100" type="submit">
+            Apply Now
+          </a>
+        </div>
+        <%- include('jobs-recommended') %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Job Detail End -->
