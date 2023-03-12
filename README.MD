@@ -1,5 +1,5 @@
 ## Whats This?
-This is a job-board(not technically). Its a template that consumes [remoteok.com](remoteok.com) API(if you have been my follower for sometime you know I love APIs).
+This is a (WIP)job-board(not technically). Its a template that consumes [remoteok.com](remoteok.com) API(if you have been my follower for sometime you know I love APIs).
 
 Since the remoteok.com API is free, I also fetched a free HTML template and put together a Nodejs/ejs project that helps you find remote jobs.
 
