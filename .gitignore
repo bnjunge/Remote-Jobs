@@ -1,0 +1,7 @@
+./node_modules
+./vs-code
+./.gitignore
+./.git
+./.vscode
+./DS_Store
+./.DS_Store
