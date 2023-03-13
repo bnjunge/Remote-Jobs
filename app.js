@@ -27,6 +27,7 @@ app
       const jobs = await main.getJobs();
 
       // console.log(jobs)
+
       if (jobs.length > 0) {
         cache.set("jobs", jobs, 7200);
         console.log("Jobs are not cached");
@@ -82,7 +83,7 @@ app
       const cachedJobs = cache.get("jobs");
       if (cachedJobs) {
         console.log("Jobs are cached");
-        const job = cachedJobs.find((job) => job.id === req.params.id);
+        const job = cachedJobs.find((job) => job.slug === req.params.id);
         job.description = job.description
           .replace(/Â/g, "")
           .replace(/â\x82¬/g, "€")
@@ -106,7 +107,7 @@ app
 
         cache.set("jobs", jobs, 7200);
         console.log("Jobs are not cached");
-        const job = jobs.find((job) => job.id === req.params.id);
+        const job = jobs.find((job) => job.slug === req.params.id);
         job.description = job.description
           .replace(/Â/g, "")
           .replace(/â\x82¬/g, "€")
