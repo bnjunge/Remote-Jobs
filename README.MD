@@ -9,5 +9,17 @@ I have build almost all my project using FREE APIs. From the ones that pay the l
 ## Can I use it?
 Feel FREE! No guarantees that this project will work or will make you money or will be safe! All efforts are made to ensure its usable.
 
+## Whats in the future
+I am working to make this a better site for everyone, so in future, am going to add the following:
+- [x] Basic Site
+- [x] RemoteOk.com API
+- [ ] SEO Implemented
+- [ ] Track link clicks
+- [ ] Dashboard for admin
+- [ ] Allow job posting (Hybrid Jobs - From remoteok.com and locally posted)
+- [ ] Implement billing
+- [ ] Any other(Soon to see with the project projection)
+
+
 ## LICENSE
 MIT. 
