@@ -26,15 +26,20 @@ app
       const main = new Main();
       const jobs = await main.getJobs();
 
-      cache.set("jobs", jobs, 7200);
-      console.log("Jobs are not cached");
-      jobs.shift();
+      // console.log(jobs)
+      if (jobs.length > 0) {
+        cache.set("jobs", jobs, 7200);
+        console.log("Jobs are not cached");
+        jobs.shift();
 
-      const randomJobs = jobs
-        .sort(() => Math.random() - 0.5)
-        .sort(() => Math.random() - 0.5);
-      randomJobs.length = 6;
-      res.render("index", { jobs: randomJobs });
+        const randomJobs = jobs
+          .sort(() => Math.random() - 0.5)
+          .sort(() => Math.random() - 0.5);
+        randomJobs.length = 6;
+        return res.render("index", { jobs: randomJobs });
+      } else {
+        return res.render("index", { jobs: [] });
+      }
     }
   })
   .get("/about", (req, res) => {
