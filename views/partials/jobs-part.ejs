@@ -52,7 +52,7 @@
                       <a class="btn btn-light btn-square me-3" href=""
                         ><i class="far fa-heart text-primary"></i
                       ></a>
-                      <a target="_blank" class="btn btn-primary" href="<%= job.apply_url %>">Apply Now</a>
+                      <a class="btn btn-primary" href="/jobs/<%= job.slug %>">Apply Now</a>
                     </div>
                     <small class="text-truncate"
                       ><i class="far fa-calendar-alt text-primary me-2"></i>Posted: <%= new Date(job.date).toLocaleString() %></small
